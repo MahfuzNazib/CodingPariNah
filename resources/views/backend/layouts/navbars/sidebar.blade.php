@@ -12,7 +12,8 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('dashboard') }}">
-            <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="...">
+            <!-- <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="..."> -->
+            <h2>Coding Pari Nah</h2>
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -86,6 +87,13 @@
                     </a>
                 </li>
                 {{-- Dashboard Link End --}}
+                <!-- Khoj Page Start-->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('khoj.search') }}">
+                    <i class="ni ni-tv-2 text-primary"></i> {{ __('Khoj') }}
+                    </a>
+                </li>
+                <!-- Khoj Page End -->
 
                 {{-- Check User for Permission the routes Start --}}
                 @if (auth('super_admin')->check())
