@@ -37,7 +37,7 @@
                             <form method="post" action="{{ route('khoj.add') }}">
                                 @csrf
                                 <label>Input Values</label>
-                                <input type="text" class="form-control" name="values">
+                                <input type="text" class="form-control" name="values" required>
                                 <p class="text-danger">** Inputs Value must be separated bt comma [,]</p>
 
                                 <label class="mt-3">Search Value</label>

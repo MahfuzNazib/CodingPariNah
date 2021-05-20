@@ -14,9 +14,10 @@ class KhojController extends Controller
     }
 
     public function add(Request $request){
-        $values = $request->values;
+        $data = $request->all();
+
         // Convert String to Array
-        $val_array = explode(",", $values);
+        $val_array = explode(",", $data['values']);
 
         rsort($val_array); //Sort Array as Desending Order
 
