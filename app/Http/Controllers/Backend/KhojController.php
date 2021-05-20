@@ -44,9 +44,9 @@ class KhojController extends Controller
         $data['user_id'] = Auth::user()->id;
 
         // Checking This Input values are exists or not for the same user
-        return Khoj::where('values', $sss)
-                    ->where('user_id', Auth::user()->id)
-                    ->exists();
+        // return Khoj::where('values', $sss)
+        //             ->where('user_id', Auth::user()->id)
+        //             ->exists();
         
         // if(Khoj::where('values', $data['values'])->where('user_id', Auth::user()->id)->exists()){
         //     return "If";exit();

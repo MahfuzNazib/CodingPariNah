@@ -103,6 +103,18 @@
                 </li>
                 <!-- Khoj Page End -->
 
+                <!-- API EndPoint Start-->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('apiEndPointIndex') }}">
+                    @if (Route::currentRouteName() == 'apiEndPointIndex')
+                        <i class="ni ni-vector text-primary"></i> 
+                        <span class="nav-link-text active-link-text"> {{ __('API EndPoints') }} </span>
+                    @else
+                        <i class="ni ni-vector text-primary"></i> {{ __('API EndPoints') }}
+                    @endif
+                    </a>
+                </li>
+                <!-- API EndPoint End-->
                 {{-- Check User for Permission the routes Start --}}
                 @if (auth('super_admin')->check())
                     @foreach ( App\Models\Module::orderBy('position', 'asc')->get() as $module)

@@ -3,7 +3,6 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\KhojController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,9 +26,12 @@ Route::group(['prefix' => 'Dashboard', 'middleware' => 'auth'], function () {
 	require_once 'backend/role_management.php';
 	// Role Management Route End
 
-	Route::get('/khoj', [KhojController::class, 'khoj'])->name('khoj.search');
-	Route::post('/khoj', [KhojController::class, 'add'])->name('khoj.add');
-
+	// Route::get('/khoj', [KhojController::class, 'khoj'])->name('khoj.search');
+	// Route::post('/khoj', [KhojController::class, 'add'])->name('khoj.add');
+	// Segment-2 Route
+	require_once('backend/khoj.php');
+	// Segment-3 Route
+	require_once('backend/api_endPoint.php');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
