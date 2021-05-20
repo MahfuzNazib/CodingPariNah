@@ -38,7 +38,7 @@
                                 @csrf
                                 <label>Input Values</label>
                                 <input type="text" class="form-control" name="values" required>
-                                <p class="text-danger">** Inputs Value must be separated bt comma [,]</p>
+                                <p class="text-danger">** Inputs Value must be separated by comma [,]</p>
 
                                 <label class="mt-3">Search Value</label>
                                 <input type="number" class="form-control" name="search">

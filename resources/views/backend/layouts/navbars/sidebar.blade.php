@@ -95,9 +95,9 @@
                     <a class="nav-link" href="{{ route('khoj.search') }}">
                     @if (Route::currentRouteName() == 'khoj.search')
                         <i class="ni ni-glasses-2 text-primary"></i> 
-                        <span class="nav-link-text active-link-text"> {{ __('Khoj') }} </span>
+                        <span class="nav-link-text active-link-text"> {{ __('Khoj The Search') }} </span>
                     @else
-                        <i class="ni ni-glasses-2 text-primary"></i> {{ __('Khoj') }}
+                        <i class="ni ni-glasses-2 text-primary"></i> {{ __('Khoj The Search') }}
                     @endif
                     </a>
                 </li>

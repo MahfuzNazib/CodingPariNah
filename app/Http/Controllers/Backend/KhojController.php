@@ -34,6 +34,9 @@ class KhojController extends Controller
         }else{
             $getData = "False";
         }
+
+        // Checking This Input values are exists or not for the same user
+        
         $data['values'] = $desending_order_value;
         $data['user_id'] = Auth::user()->id;
         $save = Khoj::createKhojValues($data);
