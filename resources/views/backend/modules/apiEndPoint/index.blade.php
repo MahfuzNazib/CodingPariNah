@@ -1,8 +1,8 @@
 @extends('backend.layouts.app')
-
 @section('content')
 @include('backend.layouts.headers.cards')
-{{-- Page Header Start --}}
+
+<!-- Page Header Start -->
 <div class="header bg-primary pb-6">
     <div class="container-fluid">
         <div class="header-body">
@@ -20,7 +20,9 @@
         </div>
     </div>
 </div>
-{{-- Page Header End --}}
+<!-- Page Header End -->
+
+<!-- Main Content Start -->
 <div class="container-fluid mt--6">
     <div class="row justify-content-center">
         <div class=" col ">
@@ -49,12 +51,13 @@
                                     <tr>
                                         <td>{{ $i }}</td>
                                         <td>
-                                            
-                                            <?php print_r($point->values) ?>
+                                            @php
+                                            echo '[ '.implode(",", $point->values).' ]'
+                                            @endphp
                                         </td>
                                         <td>{{ $point->created_at }}</td>
                                         <td>
-                                            <span class="badge badge-success">You</span>
+                                            <span class="badge badge-success">{{ $point->user->name }} </span> <span class="badge badge-primary">You</span>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -70,4 +73,5 @@
         </div>
     </div>
 </div>
+<!-- Main Content End -->
 @endsection

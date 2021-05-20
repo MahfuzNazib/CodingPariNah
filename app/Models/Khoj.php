@@ -24,4 +24,10 @@ class Khoj extends Model
             throw new \Exception($e->getMessage(), 1);               
         }
     }
+
+    // Eloquent Relation for User
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
