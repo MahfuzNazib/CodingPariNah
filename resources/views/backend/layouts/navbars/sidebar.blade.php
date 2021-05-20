@@ -75,7 +75,8 @@
 
             <!-- Navigation Start-->
             <ul class="navbar-nav">
-                {{-- Dashboard Link Start --}}
+
+                <!-- Dashboard Start -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('dashboard') }}">
                         @if (Route::currentRouteName() == 'dashboard')
@@ -86,11 +87,18 @@
                         @endif
                     </a>
                 </li>
-                {{-- Dashboard Link End --}}
+                <!-- Dashboard End -->
+
+
                 <!-- Khoj Page Start-->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('khoj.search') }}">
-                    <i class="ni ni-tv-2 text-primary"></i> {{ __('Khoj') }}
+                    @if (Route::currentRouteName() == 'khoj.search')
+                        <i class="ni ni-glasses-2 text-primary"></i> 
+                        <span class="nav-link-text active-link-text"> {{ __('Khoj') }} </span>
+                    @else
+                        <i class="ni ni-glasses-2 text-primary"></i> {{ __('Khoj') }}
+                    @endif
                     </a>
                 </li>
                 <!-- Khoj Page End -->

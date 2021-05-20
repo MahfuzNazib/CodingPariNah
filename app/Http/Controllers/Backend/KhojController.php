@@ -34,15 +34,15 @@ class KhojController extends Controller
         }else{
             $getData = "False";
         }
-
         $data['values'] = $desending_order_value;
         $data['user_id'] = Auth::user()->id;
         $save = Khoj::createKhojValues($data);
-        // return response()->json(['status' => 'Success', 'getData' => $getData], 200);
-        // return response()->json([
-        //     'khoj' => view('backend.modules.khoj.khoj')->with('getData',$getData)->render()
-        // ]);
-        return redirect()->route('khoj.search')->with('getData', $getData);
-        // return view('backend.modules.khoj.khoj')->with('getData', $getData);
+
+        if($getData == "True"){
+            return response()->json(['success' => 'Result : True'],200);
+        }else{
+            return response()->json(['warning' => 'Result : False'],200);
+        }
+        
     }
 }

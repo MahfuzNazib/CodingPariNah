@@ -34,7 +34,7 @@
                             <!-- Left Side Empty DIV -->
                         </div>
                         <div class="col-md-8">
-                            <form method="post" action="{{ route('khoj.add') }}">
+                            <form class="ajax-form" method="post" action="{{ route('khoj.add') }}">
                                 @csrf
                                 <label>Input Values</label>
                                 <input type="text" class="form-control" name="values" required>
