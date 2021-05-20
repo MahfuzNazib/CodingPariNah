@@ -15,7 +15,7 @@ class KhojController extends Controller
 
     public function add(Request $request){
         $data = $request->all();
-
+        $getData = null;
         // Convert String to Array
         $val_array = explode(",", $data['values']);
 
@@ -28,9 +28,21 @@ class KhojController extends Controller
             array_push($desending_order_value, $val_array[$i]); //Push value into new array
         }
 
+        // Check Searching Value
+        if(in_array($data['search'], $desending_order_value)){
+            $getData = "True";
+        }else{
+            $getData = "False";
+        }
+
         $data['values'] = $desending_order_value;
         $data['user_id'] = Auth::user()->id;
         $save = Khoj::createKhojValues($data);
-        return back();
+        // return response()->json(['status' => 'Success', 'getData' => $getData], 200);
+        // return response()->json([
+        //     'khoj' => view('backend.modules.khoj.khoj')->with('getData',$getData)->render()
+        // ]);
+        return redirect()->route('khoj.search')->with('getData', $getData);
+        // return view('backend.modules.khoj.khoj')->with('getData', $getData);
     }
 }

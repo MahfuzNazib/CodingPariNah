@@ -43,6 +43,10 @@
                                 <label class="mt-3">Search Value</label>
                                 <input type="number" class="form-control" name="search">
 
+                                @if(session('getData'))
+                                <label><strong>Result : </strong> <span>{{ session('getData') }}</span></label>
+                                @endif
+
                                 <input type="submit" value="Khoj" class="btn btn-info mt-3">
                             </form>
                         </div>
