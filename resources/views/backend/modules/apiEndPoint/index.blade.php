@@ -52,7 +52,7 @@
                                         <td>{{ $i }}</td>
                                         <td>
                                             @php
-                                            echo '[ '.implode(",", $point->values).' ]'
+                                                echo '[ '.implode(",", $point->values).' ]'
                                             @endphp
                                         </td>
                                         <td>{{ $point->created_at }}</td>
