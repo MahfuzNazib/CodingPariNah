@@ -115,31 +115,6 @@
                     </a>
                 </li>
                 <!-- API EndPoint End-->
-                {{-- Check User for Permission the routes Start --}}
-                @if (auth('super_admin')->check())
-                    @foreach ( App\Models\Module::orderBy('position', 'asc')->get() as $module)
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#navbar-examples-{{ $module->position }}" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="{{ $module->icon }} text-primary"></i>
-                            <span class="nav-link-text">{{ $module->name }}</span>
-                        </a>
-    
-                        <div class="collapse" id="navbar-examples-{{ $module->position }}">
-                            <ul class="nav nav-sm flex-column">
-                                @foreach ($module->sub_module->sortBy('position', false) as $sub_module)
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route($sub_module->route) }}">
-                                            {{ $sub_module->name }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </li>
-                    @endforeach
-                @endif
-                {{-- Check User for Permission the routes End --}}
-                
             </ul>
         </div>
     </div>
