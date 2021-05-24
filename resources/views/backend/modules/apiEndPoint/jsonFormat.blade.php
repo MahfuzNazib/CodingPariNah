@@ -19,8 +19,8 @@
 
                 <!-- JSON Format Buttons -->
                 <div class="col-lg-6 col-7">
-                    <a href="{{ route('apiEndPointJson') }}">
-                        <button class="btn btn-info float-right">JSON Format</button>
+                    <a href="{{ route('apiEndPoint') }}">
+                        <button class="btn btn-info float-right">Normal Format</button>
                     </a>
                 </div>
             </div>
@@ -51,26 +51,11 @@
                                     <th>Created By</th>
                                 </thead>
 
-                                <tbody>
-                                    <?php $i=0; ?>
-                                    @foreach($endpoints as $point)
-                                    <?php $i++; ?>
-                                    <tr>
-                                        <td>{{ $i }}</td>
-                                        <td>
-                                            @php
-                                                echo '[ '.implode(",", $point->values).' ]'
-                                            @endphp
-                                        </td>
-                                        <td>{{ $point->created_at }}</td>
-                                        <td>
-                                            <span class="badge badge-success">{{ $point->user->name }} </span> <span class="badge badge-primary">You</span>
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                                <tbody id="jsonData">
+
                                 </tbody>
                             </table>
-                            
+
                         </div>
                         <div class="col-md-2">
                             <!-- Right Side Empty DIV -->
@@ -82,4 +67,11 @@
     </div>
 </div>
 <!-- Main Content End -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        alert("Ready")
+    });
+
+</script>
 @endsection
