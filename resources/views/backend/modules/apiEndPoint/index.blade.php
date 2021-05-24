@@ -63,6 +63,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            
                         </div>
                         <div class="col-md-2">
                             <!-- Right Side Empty DIV -->

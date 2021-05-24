@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class ApiEndPointController extends Controller
 {
     public function index(){
-        $endpoints = Khoj::with('user')->where('user_id', Auth::user()->id)->paginate(10);
-        // return $endpoints;exit();
+        $endpoints = Khoj::with('user')->where('user_id', Auth::user()->id)->get();
         return view('backend.modules.apiEndPoint.index', compact('endpoints'));
     }
 }
