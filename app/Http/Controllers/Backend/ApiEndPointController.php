@@ -20,10 +20,7 @@ class ApiEndPointController extends Controller
         return response()->json([
             "status" => "success",
             "user_id" => Auth::user()->id,
-            "payload" => [
-                'timestamp' => $endpoints[0]->created_at,
-                'values' => $endpoints[0]->values
-            ]
+            "payload" => $endpoints
         ]);
     }
 }
